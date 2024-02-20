@@ -44,7 +44,7 @@ public class UserController {
         Optional<User> optionalUser = userService.getUserById(id);
         if (optionalUser.isPresent()) {
             User existingUser = optionalUser.get();
-            // Update the existing user with the new data
+
             existingUser.setName(newUser.getName());
             existingUser.setLastname(newUser.getLastname());
             existingUser.setBirthdate(newUser.getBirthdate());
@@ -57,8 +57,7 @@ public class UserController {
             existingUser.setOperatorcode(newUser.getOperatorcode());
             existingUser.setProfileImg(newUser.getProfileImg());
 
-            // Save the updated user
-            User updatedUser = userService.updateUser(id, existingUser); // Pass the user ID as well
+            User updatedUser = userService.updateUser(id, existingUser);
 
             return ResponseEntity.ok(updatedUser);
         } else {

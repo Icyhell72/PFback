@@ -37,4 +37,25 @@ public class User {
     @Nullable
     private String profileImg;
 
+    public String PhoneNumberToString(Integer phonenumber) {
+        // Check if the phone number is null
+        if (phonenumber == null) {
+            return null;
+        }
+        return phonenumber.toString();
+    }
+
+    public Integer stringToPhoneNumber(String phoneNumberString) {
+        if (phoneNumberString == null || phoneNumberString.isEmpty()) {
+            return null;
+        }
+        try {
+            return Integer.parseInt(phoneNumberString);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
+
+
 }
