@@ -9,6 +9,7 @@ public interface UserInterface {
     List<User> getAllUsers();
 
     Optional<User> getUserById(Integer id);
+    Optional<User> getUserByUsername(String username);
 
     User createUser(User user);
 
